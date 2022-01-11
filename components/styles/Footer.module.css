@@ -1,0 +1,39 @@
+.LogoCircle {
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.Title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.05em;
+}
+
+.Title__White {
+    color: white;
+}
+
+.Subtitle {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+}
+
+.Subtitle__White {
+    color: white;
+}
+
+.HorizontalLine {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.HorizontalLine__White {
+    color: white;
+    border-color: white;
+}

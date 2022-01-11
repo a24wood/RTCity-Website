@@ -1,0 +1,31 @@
+.HeaderImage {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+.AuthorImage {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    object-position: center;
+    object-fit: contain;
+}
+
+.AuthorImage_Class {
+    border-radius: 50%;
+}
+
+.Blog__Title {
+    font-weight: bold;
+}
+
+.Blog__TeamTitle {
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+.Header__Subtext {
+    font-size: 15px;
+}

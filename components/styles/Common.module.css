@@ -1,0 +1,54 @@
+.Logo {
+    position: relative;
+    height: 60px;
+    width: 60px;
+}
+
+.Logo:hover {
+    cursor: pointer;
+}
+
+.LogoTitle {
+    height: 100%;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 34px;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+}
+.LogoTitle__Black,  .LogoTitle__Black:hover {
+    color: black;
+}
+.LogoTitle__White, .LogoTitle__White:hover {
+    color: white;
+}
+
+
+/* Links */
+.Link {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    text-decoration: none;
+}
+.Link__Black, .Link__Black:hover {
+    color: black;
+}
+.Link__White, .Link__White:hover {
+    color: white;
+}
+.Link__Highlight {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #E5E5E5;
+}
+.Link__Small {
+    font-size: 13px;
+}
+
+.Container__Black {
+    background-color: #252525;
+}
