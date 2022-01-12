@@ -1,4 +1,5 @@
 import styles from "../styles/Blog.module.css";
+import React from 'react'
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -6,7 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 const readingTime = require("reading-time");
 
-export default function Blog({ blogs }) {
+export default function Home({ blogs }) {
+    
     return (
         <>
             <div className={`container text-center py-5 ${styles.BlogHeader}`}>
