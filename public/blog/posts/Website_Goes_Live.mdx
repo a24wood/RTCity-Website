@@ -1,0 +1,81 @@
+---
+    title: "Website Goes Live!"
+    description: "Hello everyone, welcome to the launch of the website."
+    author: "Steven Tuer"
+    author_image: "/blog/authors/steven_headshot.jpg"
+    header_image: "/blog/post_assets/avphoto.png"
+    header_image_alt: "Web Goes Live"
+    thumbnail: "avphoto.png"
+    date: "2022-01-21"
+    tag: "RTCity"
+    published: "true"
+---
+
+Hello everyone, welcome to the launch of the website. We are super excited to be sharing our progress with you for the next 2 months. Today we will introduce you to our team and project, as well lay out the format that our blog posts will follow for the next few weeks. Finally, we will wrap up with the progress we have made to date.
+
+<br />
+
+Our team compromises of five 4th year Mechatronics students that are passionate about autonomous vehicles. Pictured below from left to right group members are Aidan Wood, Aleks Ficek, Braeden Syrnyk, Guragam Bhalla, and Steven Tuer. As a group we have a broad range of knowledge within the AV space stemming from internships at relevant companies such as NVIDIA, Gatik, and Tesla. Our group also features members with experience in relevant research environments at the University of Waterloo, Stanford University, and Cambridge University. 
+
+<br />
+
+For our project, our team decided to work in collaboration with Professor Amir Khajepour and the Mechatronic Vehicle Systems Lab (MVS) on a new approach to autonomous vehicle systems. As of 2019, there were over 31 million autonomous vehicles worldwide. Furthermore, between 2020 and 2023, the number of autonomous vehicles in operation is expected to grow by almost 60%. However, autonomous vehicles are costly compared to standard vehicles, as they require extensive, costly sensor suites to sense their surrounding environment. These sensor suites can consist of radar, LiDAR, sonar, GPS, and an inertial measurement system.
+
+<br />
+
+Consequently, a suitable alternative needs to be found to reduce the costs of autonomous vehicles. One suitable solution to this problem is what our group will be demonstrating. Through a distributed network of individual perception nodes across a designated physical area, a global system can be created to make any connected vehicle or, in general, a fleet of vehicles autonomous.
+
+<br />
+
+Now, a lot of information was just thrown at you, lets break down a few key terms for our project:
+
+<br />
+
+**Node:** A node represents a single perception unit comprised of 2 cameras, 1 LiDAR, and one NVIDIA Jeston Xavier
+
+<br />
+
+**Global System:** The global system is comprised of nodes that are physically placed along a selected route. Nodes are physically mounted to things such as light posts. The global system can now fuse the perception data from the set of nodes to be able to make autonomous decisions.
+<br />
+
+As our group begins the implementation phase of our project we will break our future updates into the following structure.
+<br />
+
+**Local Perception Updates:**
+Here we will discuss our progress on the side of developing a perception stack for a single node. This includes updates on 2D detections, LiDAR data processing & fusion, node calibration, and overall node bring up.
+<br />
+
+**Global Perception Updates:** In this section we will discuss advancements made on the global
+system that will fuse individual perception nodes together to create one source of perception data. This piece will include updates on multi-node bounding box fusion, multi-node object re-identification, and 5G cloud deployment.
+<br />
+
+### Progress to Date: Jan 20th
+For the purposes of keeping todays blog post short and too the point we will give a brief bullet pointlist of what has been completed thus far. In future posts we will expand more on individual tasks completed and challenges faced along the way.
+<br />
+
+**Local Perception:** <br />
+* Camera & LiDAR sensor drivers up and running in ROS<br />
+* 2D Detection Model implemented and running (YOLOv4)<br />
+* LiDAR ground plane estimation in ROS running
+<br />
+
+Next Steps/In Progress:<br />
+* Clustering of LiDAR points for 3D bounding boxes<br />
+* Integrate 2D detection with LiDAR data<br />
+* Camera calibration<br />
+* Transform determination for bounding box reporting
+<br />
+
+**Global Perception:**<br />
+* Initial ROS node structure up and running<br />
+* Gather data from multiple perception nodes<br />
+* Synchronization for percption nodes bounding box data<br />
+* Carla simulation implementation of multi-node system for initial system data
+<br />
+
+Next Steps:<br />
+* Linear model for bounding box prediction<br />
+* Object re-identification based on linear model<br />
+* Azure ROS node launch 
+
+

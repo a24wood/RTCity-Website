@@ -1,0 +1,39 @@
+.IndexBanner_Text_Div {
+    max-width: 610px;
+}
+
+.BannerIMG {
+    position: relative;
+    height: 350px;
+    width: 820px;
+}
+
+/* Feature Images */
+.FeatureImage {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 20px;
+}
+.FeaturesContainer {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.FeatureIcon {
+    width: 15px;
+    height: 15px;
+}
+
+
+@media only screen and (max-width: 678px) {
+    .BannerIMG {
+        height: 300px;
+    }
+    .FeaturesContainer {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+    .FeatureImage {
+        height: 300px;
+    }
+}

@@ -15,6 +15,13 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="col-8 text-end d-none d-md-block">
+                   <div className="d-inline mx-3">
+                        <Link href="/blog" passHref>
+                            <a className={`${commonStyles.Link} ${commonStyles.Link__Black} ${commonStyles.Link__Highlight}`}>
+                                Blog
+                            </a>
+                        </Link>
+                    </div>
                     <div className="d-inline mx-3">
                         <Link href="/team" passHref>
                             <a className={`${commonStyles.Link} ${commonStyles.Link__Black} ${commonStyles.Link__Highlight}`}>

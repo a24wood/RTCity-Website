@@ -87,7 +87,6 @@ export default function Home() {
               </p>
               </div>
             </div>
-
             {/* Feature Section */}
             <Features />
           </div>

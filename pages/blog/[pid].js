@@ -13,12 +13,6 @@ const components = {};
 export default function Blog({ source, frontMatter, readingTime }) {
     return (
         <>
-            <Head>
-                <title>{frontMatter.title} | Phros</title>
-                <meta name="description" content={frontMatter.description}/>
-                <meta name="og:image" content={frontMatter.thumbnail} />
-                <link rel="icon" href="/phros-symbol.png" />
-            </Head>
             <div className="container my-5">
                 <div className="row justify-content-center">
                     <div className="col-12 col-md-8">
@@ -44,7 +38,7 @@ export default function Blog({ source, frontMatter, readingTime }) {
                             <Image src={frontMatter.header_image} alt={frontMatter.header_image_alt} layout="fill" objectFit="cover"/>
                         </div>
                     </div>
-                    <div className="col-12 col-md-9 mt-5 mb-5">
+                    <div className="col-12 col-md-9 mb-5">
                         <MDXRemote {...source} components={components} />
                     </div>
                 </div>

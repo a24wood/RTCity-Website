@@ -1,0 +1,29 @@
+.TeamHeader {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.TeamHeader__Title {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.TeamHeader__Subtitle {
+    font-size: 20px;
+}
+
+
+
+@media only screen and (max-width: 678px) {
+    .TeamHeader {
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+    .TeamHeader__Title {
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .TeamHeader__Subtitle {
+        font-size: 15px;
+    }
+}
