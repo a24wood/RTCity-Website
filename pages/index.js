@@ -1,95 +1,97 @@
-import styles from "../styles/Blog.module.css";
-import React from 'react'
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+/* eslint-disable react/no-unescaped-entities */
+import React, { useState } from "react";
+import styles from "../styles/Index.module.css";
 import Image from "next/image";
-import Link from "next/link";
-const readingTime = require("reading-time");
+import { FEATURE_CARDS } from "../components/constants";
 
-export default function Home({ blogs }) {
-    
+const Features = () => {
+    const [currentFeature, setCurrentFeature] = useState(0);
     return (
-        <>
-            <div className={`container text-center py-5 ${styles.BlogHeader}`}>
-                <div className="row justify-content-center">
-                    <div className="col-12 col-md-10">
-                        <h1 className={`mb-4 ${styles.BlogHeader__Title}`}>Weclome to RTCity, the Future Of Autonomous Vehicles (or something)</h1>
-                        <h4 className={`${styles.BlogHeader__Subtitle} mb-5`}>An autonomous vehicle is any vehicle capable of sensing its environment and operating with human involvement. As of 2019, there were over 31 million autonomous vehicles worldwide. Furthermore, between 2020 and 2023, the number of autonomous vehicles in operation is expected to grow by almost 60%. However, autonomous vehicles are costly compared to standard vehicles, as they require extensive highly-expensive sensor suites to sense their surrounding environment. These sensor suites can consist of radar, LiDAR, sonar, GPS, and an inertial measurement system. Consequently, a suitable alternative needs to be found to reduce the costs of autonomous vehicles. One suitable solution to this problem is using a network of nodes across a designated area to perform the perception and planning tasks for any vehicle or interconnected fleet of vehicles. </h4>
-                        <hr />
+      <div className="row justify-content-center align-items-center">
+        <div className="col-12 col-md-4">
+          {
+            FEATURE_CARDS.map((feature, index) =>
+              <div key={feature.Title} className="my-4">
+                  <a className={`Link Link__Black Link__Large ${currentFeature === index ? "fw-bold" : ""}`} onClick={() => setCurrentFeature(index)}>
+                  {
+                    currentFeature === index ?
+                    <div className={`d-inline-block ${styles.FeatureIcon} me-2`}>
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-arrow-right" className="svg-inline--fa fa-circle-arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM406.6 278.6l-103.1 103.1c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25L306.8 288H128C110.3 288 96 273.7 96 256s14.31-32 32-32h178.8l-49.38-49.38c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l103.1 103.1C414.6 241.3 416 251.1 416 256C416 260.9 414.6 270.7 406.6 278.6z"></path></svg>
                     </div>
-                </div>
-            </div>
-            <div className="container mb-5">
-                <div className="row g-5">
-                {
-                    blogs.map((blog, index) => {
-                        const readingStats = readingTime(blog.content);
-                        const readingText = readingStats.text ? readingStats.text : "";
-                        return (
-                            <div className="col-12 col-md-4" key={`index_${index}`}>
-                                <Link href={`/blog/${blog.href}`}>
-                                <div className={`${styles.BlogPostCard}`}>
-                                    <div className={`${styles.BlogPostCard__Image}`}>
-                                        <Image src={`/blog/post_assets/${blog.thumbnail}`} alt={blog.title} layout="fill" objectFit="cover" className={`${styles.BlogPostCard__Image_Class}`} />
-                                    </div>
-                                    <div className="p-4">
-                                        <p className={`${styles.BlogPostCard__Tag} mb-1`}>{blog.tag}</p>
-                                        <h4 className={`${styles.BlogPostCard__Title}`}>{blog.title}</h4>
-                                        <p className={`${styles.BlogPostCard__Description}`}>{blog.description}</p>
-                                        <div className="d-flex align-items-center">
-                                            <div className={`${styles.BlogPostCard__AuthorImage}`}>
-                                                <Image src={blog.author_image} alt={blog.author} layout="fill" objectFit="cover" className={`d-inline-block ${styles.BlogPostCard__AuthorImage_Class}`}/>
-                                            </div>
-                                            <div className="ms-3 mt-2 align-self-center">
-                                                <h5 className={`${styles.BlogPostCard__Author}`}>{blog.author}</h5>
-                                                <h5 className={`${styles.BlogPostCard__ExtraInfo}`}>{new Date(blog.date).toDateString()} - {String(readingText)}</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                </Link>
-                            </div>
-                        )
-                    })
-                }
-                </div>
-            </div>
-        </>
+                    :
+                    null
+                  }
+                  <div className="d-inline-block">
+                    {feature.Title}
+                  </div>
+                  </a>
+                  {
+                    currentFeature === index ?
+                    <p className="Paragraph Paragraph__Small text-start">
+                      {feature.Brief}
+                    </p>
+                    :
+                    null
+                  }
+              </div>
+            )
+          }
+        </div>
+        <div className="col-12 col-md-8">
+          <div className={styles.FeatureImage}>
+            <Image src={FEATURE_CARDS[currentFeature].src} class="rounded" alt="alt img" layout="fill" objectFit="contain"/>
+          </div>
+            <p className="Paragraph">
+                {FEATURE_CARDS[currentFeature].Description}
+            </p>
+        </div>
+      </div>
     )
 }
 
-export async function getStaticProps({ params }) {
+export default function Home() {
+  return (
+    <div>
+      {/* BANNER */}
+      <div className="container">
+        <div className="row justify-content-center text-center">
+          <div className={`col ${styles.IndexBanner_Text_Div}`}>
+            <h1 className="Title my-3">
+              Welcome to RTCity
+            </h1>
+            <p className="my-3">
+                A new approach to Autonomous Vehicles
+            </p>
+          </div>
+        </div>
+        <div className="d-flex justify-content-center">
+          <div className={styles.BannerIMG}>
+            {/* Photo */}
+            <Image src="/sm-page.jpg" alt="alt photo" class="rounded" layout="fill" objectFit="contain" />
+          </div>
+        </div>
+      </div>
 
-    // Get all blog posts
-    const folderPath = path.join(process.cwd(), '/public/blog/posts');
-    const blogData = fs.readdirSync(folderPath, { encoding: "utf-8"}).reduce((arr, file) => {
-        const source = path.join(process.cwd(), `/public/blog/posts/${file}`);
-        const fileSource = fs.readFileSync(source, { encoding: "utf-8" });
-        const { content, data } = matter(fileSource);
-        data.content = content;
-        const published = data.published;
-        const href = String(file).substring(0, String(file).length - 4);
-        data.href = href;
-        if (published === "false") return arr;
-        return [...arr, data];
-    }, []);
+      {/* TOOLS */}
+      <div className={`container-fluid GreyBackground ${styles.FeaturesContainer}`} id="our-features">
+        <div className="container">
 
-    // Sort the blog posts
-    try {
-        blogData.sort((a, b) => {
-            const dateA = new Date(a.date);
-            const dateB = new Date(b.date);
-            return dateA - dateB;
-        })
-    } catch (e) {
-        console.log("Failed to sort by date: ", e);
-    }
+            {/* TEXT */}
+            <div className="row justify-content-center text-center">
+              <div className={`col ${styles.IndexClients_Text_Div} my-5`}>
+              <h1 className="Title Title__Small">
+              Learn More About Our Project Here
+              </h1>
+              <p className="Paragraph">
+              Click on the boxes to navigate
+              </p>
+              </div>
+            </div>
 
-
-    return {
-        props: {
-            blogs: blogData
-        }
-    }
+            {/* Feature Section */}
+            <Features />
+          </div>
+        </div>
+    </div>
+  )
 }
