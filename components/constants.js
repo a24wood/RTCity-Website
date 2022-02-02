@@ -36,25 +36,25 @@ const FEATURE_CARDS = [
         Title: "The Problem",
         Brief: "What problem are we trying to solve?",
         Description: "Despite sensor technology innovations leading to reduced costs, autonomous vehicles remain more expensive than human-operated alternatives. However, fully autonomous vehicles provide improved safety and productivity. Consequently, autonomous vehicles need a cost-effective alternative to their current sensor suite to become a feasible alternative to human-operated vehicles.",
-        src: "/landing/problem.PNG",
+        src: "/landing/problem.png",
     },
     {
         Title: "Our Objective",
         Brief: "What is the objective of this project?",
         Description: "This project aimed to develop a cost-effective real-time perception and localization infrastructure so that connected autonomous vehicle systems can safely and effectively navigate around the University of Waterloo's north campus. The WATonoBus will be used as a platform for a proof of concept for this project.",
-        src: "/landing/objective.PNG",
+        src: "/landing/objective.png",
     },
     {
         Title: "Node",
         Brief: "What are we walking about when we say 'Node'",
         Description: "Within the context of our project, a node refers to a single perception unit covering only a portion of the total route. Each node uses cameras and LiDAR to retrieve information on passing vehicles.",
-        src: "/landing/node.PNG",
+        src: "/landing/node.png",
     },
     {
         Title: "Global Level Perception",
         Brief: "What does 'Global Level Perception' mean?",
         Description: "The route we have selected, unfortunately, cannot be covered by a single node. Therefore, we'll have to orchestrate perception data from multiple nodes to map the location of individual vehicles on our route.",
-        src: "/landing/route.png", 
+        src: "/landing/route.PNG", 
     }
 ]
 
