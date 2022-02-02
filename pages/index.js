@@ -52,22 +52,15 @@ const Features = () => {
 export default function Home() {
   return (
     <div>
+      <title>RTCity</title>
       {/* BANNER */}
-      <div className="container">
+      <div className="container-fluid">
         <div className="row justify-content-center text-center">
-          <div className={`col ${styles.IndexBanner_Text_Div}`}>
-            <h1 className="Title my-3">
-              Welcome to RTCity
-            </h1>
-            <p className="my-3">
-                A new approach to Autonomous Vehicles
-            </p>
-          </div>
-        </div>
-        <div className="d-flex justify-content-center">
-          <div className={styles.BannerIMG}>
-            {/* Photo */}
-            <Image src="/sm-page.jpg" alt="alt photo" class="rounded" layout="fill" objectFit="contain" />
+          <div className={`col ${styles.LandingBanner}`}>
+            <div> 
+              <h1>Welcome to RTCity</h1>
+              <h5>A new approach to fleet autonomous vehicles</h5>
+            </div>
           </div>
         </div>
       </div>
@@ -75,16 +68,15 @@ export default function Home() {
       {/* TOOLS */}
       <div className={`container-fluid GreyBackground ${styles.FeaturesContainer}`} id="our-features">
         <div className="container">
-
             {/* TEXT */}
             <div className="row justify-content-center text-center">
               <div className={`col ${styles.IndexClients_Text_Div} my-5`}>
               <h1 className="Title Title__Small">
-              Learn More About Our Project Here
+                Learn More About Our Project Here
               </h1>
-              <p className="Paragraph">
-              Click on the boxes to navigate
-              </p>
+              <h5>
+                Click on the boxes to navigate
+              </h5>
               </div>
             </div>
             {/* Feature Section */}
