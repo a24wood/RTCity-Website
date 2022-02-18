@@ -58,8 +58,7 @@ export default function Home() {
         <div className="row justify-content-center text-center">
           <div className={`col ${styles.LandingBanner}`}>
             <div> 
-              <h1>Welcome to RTCity</h1>
-              <h5>A new approach to fleet autonomous vehicles</h5>
+              <div className={styles.BannerText}>RTCITY</div>
             </div>
           </div>
         </div>
